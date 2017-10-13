@@ -27,7 +27,14 @@ class ViewController: UIViewController {
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
         QuoteDataSingleton.sharedInstance.addToList(image: self.quoteView.imageView.image!)
-        QuoteDataSingleton.sharedInstance.addToList(quote: self.quoteView.label.text!)
+        //QuoteDataSingleton.sharedInstance.addToList(quote: self.quoteView.label.text!)
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let quote = Quote(context: context) // Link Task & Context
+        quote.quoteText = self.quoteView.label.text
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        let data = UIImagePNGRepresentation(self.quoteView.imageView.image!) as NSData?        
     }
     
     func generateQuoteAndImage() {

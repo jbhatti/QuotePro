@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Singleton {
+class QuoteDataSingleton {
     
-    static let sharedInstance = Singleton()
+    static let sharedInstance = QuoteDataSingleton()
     
     var arrayOfQuotes: [String] = []
     var arrayOfImages: [UIImage] = []

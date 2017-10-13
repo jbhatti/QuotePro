@@ -12,7 +12,7 @@
 		8806C0E41F900DFB0076D04B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8806C0E21F900DFB0076D04B /* Model.xcdatamodeld */; };
 		8806C0E61F9010A20076D04B /* QuoteImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806C0E51F9010A20076D04B /* QuoteImageTableViewController.swift */; };
 		8806C0EB1F90147F0076D04B /* QuoteImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806C0EA1F90147F0076D04B /* QuoteImageTableViewCell.swift */; };
-		8806C0ED1F902AEA0076D04B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806C0EC1F902AEA0076D04B /* Singleton.swift */; };
+		8806C0ED1F902AEA0076D04B /* QuoteDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806C0EC1F902AEA0076D04B /* QuoteDataSingleton.swift */; };
 		AAF273911F8E6AA8004F1873 /* QuoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAF273901F8E6AA8004F1873 /* QuoteView.xib */; };
 		AAF273931F8E6ABC004F1873 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF273921F8E6ABC004F1873 /* QuoteView.swift */; };
 		AAF273981F8E74B5004F1873 /* CameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF273971F8E74B5004F1873 /* CameraButton.swift */; };
@@ -40,7 +40,7 @@
 		8806C0E31F900DFB0076D04B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8806C0E51F9010A20076D04B /* QuoteImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteImageTableViewController.swift; sourceTree = "<group>"; };
 		8806C0EA1F90147F0076D04B /* QuoteImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteImageTableViewCell.swift; sourceTree = "<group>"; };
-		8806C0EC1F902AEA0076D04B /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		8806C0EC1F902AEA0076D04B /* QuoteDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDataSingleton.swift; sourceTree = "<group>"; };
 		AAF273901F8E6AA8004F1873 /* QuoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteView.xib; sourceTree = "<group>"; };
 		AAF273921F8E6ABC004F1873 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		AAF273971F8E74B5004F1873 /* CameraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButton.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		8806C0E81F9011FC0076D04B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8806C0EC1F902AEA0076D04B /* Singleton.swift */,
+				8806C0EC1F902AEA0076D04B /* QuoteDataSingleton.swift */,
 				8806C0BB1F8EB0360076D04B /* PhotoAPIManager.swift */,
 				8806C0BD1F8EB0470076D04B /* QuotesAPIManager.swift */,
 				8806C0E21F900DFB0076D04B /* Model.xcdatamodeld */,
@@ -262,7 +262,7 @@
 				8806C0BC1F8EB0360076D04B /* PhotoAPIManager.swift in Sources */,
 				8806C0EB1F90147F0076D04B /* QuoteImageTableViewCell.swift in Sources */,
 				AAF7E1841F8D6417004FA672 /* ViewController.swift in Sources */,
-				8806C0ED1F902AEA0076D04B /* Singleton.swift in Sources */,
+				8806C0ED1F902AEA0076D04B /* QuoteDataSingleton.swift in Sources */,
 				8806C0E41F900DFB0076D04B /* Model.xcdatamodeld in Sources */,
 				AAF273931F8E6ABC004F1873 /* QuoteView.swift in Sources */,
 				8806C0BE1F8EB0470076D04B /* QuotesAPIManager.swift in Sources */,

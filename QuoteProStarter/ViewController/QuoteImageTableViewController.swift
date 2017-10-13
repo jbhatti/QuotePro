@@ -23,7 +23,7 @@ class QuoteImageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Singleton.sharedInstance.arrayOfQuotes.count
+        return QuoteDataSingleton.sharedInstance.arrayOfQuotes.count
     }
     
     
@@ -33,8 +33,8 @@ class QuoteImageTableViewController: UITableViewController {
         else
         { fatalError() }
         
-        let image = Singleton.sharedInstance.arrayOfImages[indexPath.row]
-        let quote = Singleton.sharedInstance.arrayOfQuotes[indexPath.row]
+        let image = QuoteDataSingleton.sharedInstance.arrayOfImages[indexPath.row]
+        let quote = QuoteDataSingleton.sharedInstance.arrayOfQuotes[indexPath.row]
         
         cell.quoteText.text = quote
         cell.importImageView.image = image

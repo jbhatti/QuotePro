@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
-        Singleton.sharedInstance.addToList(image: self.quoteView.imageView.image!)
-        Singleton.sharedInstance.addToList(quote: self.quoteView.label.text!)
+        QuoteDataSingleton.sharedInstance.addToList(image: self.quoteView.imageView.image!)
+        QuoteDataSingleton.sharedInstance.addToList(quote: self.quoteView.label.text!)
     }
     
     func generateQuoteAndImage() {

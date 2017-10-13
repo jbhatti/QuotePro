@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -24,9 +24,39 @@
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="arn-lA-kiP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huR-aC-ZS4">
+                                <rect key="frame" x="164" y="10" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="huR-aC-ZS4" firstAttribute="centerX" secondItem="arn-lA-kiP" secondAttribute="centerX" id="fkb-D2-lw9"/>
+                            <constraint firstAttribute="bottom" secondItem="huR-aC-ZS4" secondAttribute="bottom" constant="20" symbolic="YES" id="wwF-nu-GhC"/>
+                        </constraints>
                     </view>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="sPW-yO-9qW"/>
+                    </constraints>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHl-xo-w83">
+                    <rect key="frame" x="0.0" y="123.5" width="375" height="120"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="174-rv-CK0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56b-ou-sC8">
+                                <rect key="frame" x="152" y="49" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="ilj-a2-RsF"/>
                     </constraints>
                     <blurEffect style="light"/>
                 </visualEffectView>
@@ -35,8 +65,16 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="vvG-hg-af8" secondAttribute="trailing" id="QrQ-gy-vPd"/>
                 <constraint firstItem="vvG-hg-af8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="W1v-5B-tVq"/>
+                <constraint firstItem="eHl-xo-w83" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Xxq-FV-IPh"/>
+                <constraint firstAttribute="trailing" secondItem="eHl-xo-w83" secondAttribute="trailing" id="b5h-IH-4h2"/>
                 <constraint firstAttribute="bottom" secondItem="vvG-hg-af8" secondAttribute="bottom" id="nMS-pM-DpA"/>
+                <constraint firstItem="eHl-xo-w83" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-150" id="x3J-iq-csa"/>
             </constraints>
+            <connections>
+                <outlet property="cameraButton" destination="huR-aC-ZS4" id="M4s-Sw-hUU"/>
+                <outlet property="imageView" destination="Vig-4V-ERU" id="sQC-MG-EIs"/>
+                <outlet property="label" destination="56b-ou-sC8" id="OTG-He-cUf"/>
+            </connections>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>

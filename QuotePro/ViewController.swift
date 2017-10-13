@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    let quoteView: QuoteView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        quoteView = Bundle.main.loadNibNamed("QuoteView", owner: nil)?.first as? QuoteView
+        view = quoteView
+        quoteView.cameraButton.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func buttonTapped(sender: UIButton) {
+        
     }
-
 
 }
 

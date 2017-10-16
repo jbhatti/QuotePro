@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import ARKit
+
 
 class QuotesAPIManager {
     
-    struct Quote: Codable {
+    struct Quote: Codable
+    {
         let quoteAuthor: String
         let quoteText: String
     }
     
     
-    static func getQuote (completion: @escaping (_ quote: Quote) -> Void) {
+    static func getQuote (completion: @escaping (_ quote: Quote) -> Void)
+    {
         let quoteAddress = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json"
         let url = URL(string: quoteAddress)!
         URLSession.shared.dataTask(with: url)
@@ -33,11 +37,10 @@ class QuotesAPIManager {
                 let jsonDecoder = JSONDecoder()
                 let randomQuote = try jsonDecoder.decode(Quote.self, from: data)
                 print(randomQuote)
-                
-                
                 completion(randomQuote)
             }
-            catch let jsonError {
+            catch let jsonError
+            {
                 print(jsonError)
             }
             

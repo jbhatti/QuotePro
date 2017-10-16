@@ -5,7 +5,7 @@
 //  Created by steve on 2017-10-10.
 //  Copyright © 2017 steve. All rights reserved.
 //
-
+//
 import UIKit
 
 class ViewController: UIViewController {
@@ -27,18 +27,16 @@ class ViewController: UIViewController {
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
         QuoteDataSingleton.sharedInstance.addToList(image: self.quoteView.imageView.image!)
-        //QuoteDataSingleton.sharedInstance.addToList(quote: self.quoteView.label.text!)
+        QuoteDataSingleton.sharedInstance.addToList(quote: self.quoteView.label.text!)
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let quote = Quote(context: context) // Link Task & Context
-        quote.quoteText = self.quoteView.label.text
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
-        let data = UIImagePNGRepresentation(self.quoteView.imageView.image!) as NSData?        
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        let quote = Quote(context: context) // Link Task & Context
+//        quote.quoteText = self.quoteView.label.text
+//        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+//        let data = UIImagePNGRepresentation(self.quoteView.imageView.image!) as NSData?
     }
     
     func generateQuoteAndImage() {
-        
         PhotoAPIManager.getImage { (image) in
             OperationQueue.main.addOperation {
                 self.quoteView.imageView.image = image
@@ -56,14 +54,11 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @objc func randomizeTapped(sender: UIButton) {
             generateQuoteAndImage()
     }
     
     @objc func buttonTapped(sender: UIButton) {
-        
-        
         guard let image = UIImage.snapshot(view: quoteView) else {
             fatalError()
         }

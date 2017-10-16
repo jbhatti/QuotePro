@@ -10,8 +10,8 @@ import UIKit
 
 class QuoteImageTableViewController: UITableViewController {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var quotes: [Quote] = []
+    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    //var quotes: [Quote] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,8 @@ class QuoteImageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return quotes.count
+        return QuoteDataSingleton.sharedInstance.arrayOfQuotes.count
+        //return quotes.count
     }
     
     
@@ -36,33 +37,33 @@ class QuoteImageTableViewController: UITableViewController {
         else
         { fatalError() }
         
-        //let image = QuoteDataSingleton.sharedInstance.arrayOfImages[indexPath.row]
-        //let quote = QuoteDataSingleton.sharedInstance.arrayOfQuotes[indexPath.row]
+        let image = QuoteDataSingleton.sharedInstance.arrayOfImages[indexPath.row]
+        let quote = QuoteDataSingleton.sharedInstance.arrayOfQuotes[indexPath.row]
         
-        let quote = quotes[indexPath.row]
+//        let quote = quotes[indexPath.row]
+//
+//        if let myQuote = quote.quoteText {
+//            cell.quoteText.text = myQuote
+//        }
         
-        if let myQuote = quote.quoteText {
-            cell.quoteText.text = myQuote
-        }
-        
-        //cell.quoteText.text = quote
-        //cell.importImageView.image = image
+        cell.quoteText.text = quote
+        cell.importImageView.image = image
         
         return cell
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        getData()
-        tableView.reloadData()
-    }
-    
-    func getData() {
-        do {
-            quotes = try context.fetch(Quote.fetchRequest())
-        } catch {
-            print("Fetching Failed")
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        getData()
+//        tableView.reloadData()
+//    }
+//
+//    func getData() {
+//        do {
+//            quotes = try context.fetch(Quote.fetchRequest())
+//        } catch {
+//            print("Fetching Failed")
+//        }
+//    }
     
     
     /*
